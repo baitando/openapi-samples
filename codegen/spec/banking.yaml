@@ -1,0 +1,44 @@
+openapi: 3.0.1
+info:
+  title: mimacom Banking API
+  description: This is a sample API used to illustrate the tooling around an API-first approach.
+  version: 1.0.0
+  x-audience: external-public
+  x-api-id: 78e624f8-f73e-4bbe-a918-bda261fd13ec
+  contact:
+    name: Andreas Hirsch
+    url: https://www.mimacom.com
+    email: andreas.hirsch@mimacom.com
+servers:
+  - url: 'http://localhost:8080'
+    description: dev
+paths:
+  /accounts:
+    get:
+      summary: Retrieve all accounts.
+      operationId: getAccounts
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAccountsResponse'
+components:
+  schemas:
+    Account:
+      type: object
+      required:
+        - iban
+      properties:
+        iban:
+          type: string
+    GetAccountsResponse:
+      type: object
+      required:
+        - items
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Account'
