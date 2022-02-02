@@ -2,7 +2,7 @@ package com.baitando.openapi.samples.gen.springbootserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+//class principal
 @SpringBootApplication
 public class SpringBootServerApplication {
 
